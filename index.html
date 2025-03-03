@@ -8,15 +8,19 @@
     <script defer src="script.js"></script>
   </head>
   <body
-    class="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300"
+    class="bg-white text-black transition-colors duration-300"
+    style="background-color: white"
   >
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav
       class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white p-4 fixed w-full top-0 shadow-lg transition-colors duration-300"
     >
       <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
         <h1 class="text-xl font-bold">Rohan Taneja</h1>
-        <ul class="flex space-x-6">
+
+        <!-- Desktop Navigation -->
+        <ul id="nav-links" class="hidden md:flex space-x-6">
           <li>
             <a
               href="index.html"
@@ -67,13 +71,103 @@
             >
           </li>
         </ul>
-        <!-- Dark Mode Toggle -->
+
+        <!-- Desktop Dark Mode Toggle -->
         <button
           id="theme-toggle"
-          class="bg-gray-700 dark:bg-gray-300 text-white dark:text-black p-2 rounded-lg"
+          class="hidden md:block bg-gray-700 dark:bg-gray-300 text-white dark:text-black p-2 rounded-lg"
         >
           🌙
         </button>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-black dark:text-white p-2 focus:outline-none"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (Hidden by Default) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-gray-200 dark:bg-gray-900 p-4"
+      >
+        <ul class="flex flex-col space-y-4">
+          <li>
+            <a
+              href="index.html"
+              class="block text-black dark:text-white hover:text-gray-500"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block text-black dark:text-white hover:text-gray-500"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="projects.html"
+              class="block text-black dark:text-white hover:text-gray-500"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="blog.html"
+              class="block text-black dark:text-white hover:text-gray-500"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a
+              href="pricing.html"
+              class="block text-black dark:text-white hover:text-gray-500"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block text-black dark:text-white hover:text-gray-500"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="spotify.html"
+              class="block text-green-600 dark:text-green-400 hover:text-green-500"
+              >🎵 Spotify</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile Dark Mode Toggle -->
+        <div class="mt-4 flex justify-center">
+          <button
+            id="theme-toggle-mobile"
+            class="bg-gray-700 dark:bg-gray-300 text-white dark:text-black p-2 rounded-lg"
+          >
+            🌙
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -81,7 +175,9 @@
     <section
       class="h-screen flex flex-col justify-center items-center text-center px-6"
     >
-      <h1 class="text-5xl md:text-6xl font-bold">Hey, I'm Rohan 👋</h1>
+      <h1 class="text-5xl font-bold text-black dark:text-white">
+        Hey, I'm Rohan 👋
+      </h1>
       <p class="text-xl mt-4 text-gray-600 dark:text-gray-300">
         Developer Marketing & Technical Writer, crafting impactful content for
         tech brands.
@@ -95,6 +191,7 @@
     </section>
 
     <!-- Projects Section -->
+
     <section class="py-16 px-6">
       <h2 class="text-3xl font-bold text-center mb-10">Featured Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
